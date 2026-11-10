@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#202b3a">
+<title>پنل سرویس</title>
+<style>
+*{box-sizing:border-box} body{margin:0;background:#e9edf2;font-family:Tahoma,Arial,sans-serif;color:#fff}
+main{max-width:520px;min-height:100vh;margin:auto;background:#202b3a;padding:24px 18px 34px}
+header{text-align:center;padding:18px 8px 28px}
+.logo{width:58px;height:58px;border-radius:50%;background:#273b52;display:grid;place-items:center;margin:0 auto 12px;font-size:27px}
+h1{font-size:25px;margin:0 0 8px} .sub{color:#b9c5d1;font-size:14px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{border:0;border-radius:18px;padding:20px 8px;color:white;font-size:17px;font-weight:bold;min-height:84px;cursor:pointer;box-shadow:0 3px 0 #11182733}
+.blue{background:#258bd0}.green{background:#29994c}.red{background:#b8424b}
+.wide{grid-column:1/-1}
+.note{margin-top:24px;color:#aebbc8;font-size:12px;line-height:2;text-align:center}
+#msg{margin-top:18px;padding:14px;border-radius:12px;background:#31465b;color:#fff;text-align:center;display:none;line-height:1.8}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <div class="logo">⚡</div>
+ <h1>پنل سرویس</h1>
+ <div class="sub">به پنل خوش آمدید</div>
+</header>
+<section class="grid">
+ <button class="blue" onclick="showMsg('بخش خرید کانفیگ در نسخه نمایشی است.')">🚀<br>خرید کانفیگ</button>
+ <button class="green" onclick="showMsg('بخش اکانت تست هنوز به سرویس متصل نشده است.')">🧪<br>اکانت تست</button>
+ <button class="green" onclick="showMsg('برای تمدید واقعی، اتصال امن به سرور لازم است.')">🔄<br>تمدید سرویس</button>
+ <button class="blue" onclick="showMsg('فهرست سرویس‌ها در نسخه نمایشی خالی است.')">🛒<br>سرویس‌های من</button>
+ <button class="blue" onclick="showMsg('کیف پول نمایشی است و پرداختی انجام نمی‌دهد.')">💰<br>کیف پول</button>
+ <button class="red" onclick="showMsg('راه ارتباط پشتیبانی را بعداً اضافه می‌کنیم.')">☎️<br>پشتیبانی</button>
+ <button class="green wide" onclick="showMsg('لینک معرفی را بعداً تنظیم می‌کنیم.')">🎁 معرفی به دوستان</button>
+</section>
+<div id="msg" role="status"></div>
+<p class="note">نسخه اولیه نمایشی · هیچ پرداخت یا خرید واقعی انجام نمی‌شود.</p>
+</main>
+<script>
+function showMsg(text){const box=document.getElementById('msg');box.textContent=text;box.style.display='block'}
+</script>
+</body>
+</html>
